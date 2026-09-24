@@ -1,0 +1,11 @@
+.searchbar {
+  font-size: 2rem;
+  border: none;
+  border-radius: 1rem;
+}
+
+.searchBtn {
+  border: none;
+  border-radius: 1rem;
+  font-size: 2.5rem;
+}

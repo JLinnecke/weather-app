@@ -3,11 +3,11 @@ import styles from "./Header.module.css";
 import Logo from "./Logo";
 import Search from "../Search/Search";
 
-function Header() {
+function Header({ setSearchResults }) {
   return (
     <header className={styles.header}>
       <Logo />
-      <Search />
+      <Search setSearchResults={setSearchResults} />
     </header>
   );
 }

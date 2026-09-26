@@ -32,12 +32,12 @@ function CityOverview() {
             `${BASE_URL}?latitude=${city.lat}&longitude=${city.lng}${BASE_OVERVIEW_URL}`,
           );
           const data = await res.json();
-          console.log(data);
+          // console.log(data);
 
           return data;
         });
         const data = await Promise.all(requests);
-        console.log(data);
+        // console.log(data);
 
         setWeatherData(data);
       } catch (err) {
@@ -68,8 +68,5 @@ export default CityOverview;
 
 // OVERVIEW API:
 // https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&daily=temperature_2m_min,temperature_2m_max&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,wind_speed_10m,weather_code
-
-// DAILY API:
-// https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&daily=sunrise,sunset,moonrise,moonset,moon_phase,wind_speed_10m_max,temperature_2m_min,temperature_2m_max&hourly=temperature_2m,relative_humidity_2m,precipitation_probability,rain,showers,snowfall,weather_code,wind_speed_10m,apparent_temperature
 
 // ?latitude=52.52&longitude=13.41

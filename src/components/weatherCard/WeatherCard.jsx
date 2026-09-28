@@ -1,4 +1,8 @@
 import { useEffect, useState } from "react";
+import BackButton from "../BackButton/BackButton";
+import Hours from "../Hours/Hours";
+
+import styles from "../WeatherCard/WeatherCard.module.css";
 
 const BASE_DAILY_URL = "https://api.open-meteo.com/v1/forecast";
 
@@ -42,12 +46,29 @@ function Weathercard({ searchResults }) {
 
   return (
     <div>
+      <BackButton />
       <h1>{searchResults[0].name}</h1>
-      <span>{daily.temperature_2m_min[0]}</span>
+      <p>
+        <span>Min: </span>
+        {daily.temperature_2m_min[0]} °C
+      </p>
       <br></br>
-      <span>{daily.temperature_2m_max[0]}</span>
+      <p>
+        <span>Max: </span>
+        {daily.temperature_2m_max[0]} °C
+      </p>
       <br></br>
-      <span>{hourly.temperature_2m[0]}</span>
+      <p>{hourly.temperature_2m[0]}</p>
+      <div className={styles.hours_temp_container}>
+        {hourly.time.slice(0, 24).map((hours, i) => (
+          <Hours
+            key={hours}
+            time={hours}
+            temperature={hourly.temperature_2m[i]}
+            weatherCode={hourly.weather_code}
+          />
+        ))}
+      </div>
     </div>
   );
 }

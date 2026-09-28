@@ -1,0 +1,9 @@
+.btn_back {
+  font-size: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px white solid;
+  padding: 0.5rem;
+}

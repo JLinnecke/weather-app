@@ -1,0 +1,40 @@
+.card {
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  height: auto;
+}
+
+.temperature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 1rem;
+}
+
+.temperature p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.weather_details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 1),
+    0 0 4px rgba(0, 0, 0, 0.8);
+}
+
+.weather_details p {
+  font-size: 0.8rem;
+  font-weight: bold;
+}

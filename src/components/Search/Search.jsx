@@ -1,10 +1,12 @@
 import { useState } from "react";
 import styles from "./Search.module.css";
+import { useNavigate } from "react-router-dom";
 
 const BASE_CITY_URL = `https://nominatim.openstreetmap.org/search`;
 
 function Search({ setSearchResults }) {
   const [query, setQuery] = useState("");
+  const navigate = useNavigate();
 
   async function handleFetchCityData() {
     try {
@@ -16,6 +18,7 @@ function Search({ setSearchResults }) {
       console.log(data);
 
       setSearchResults(data);
+      navigate("/detail");
     } catch (err) {
       console.error(err);
     }

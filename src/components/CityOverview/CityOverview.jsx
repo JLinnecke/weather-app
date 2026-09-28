@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CityOverviewCard from "../CityOverviewCard/CityOverviewCard";
+import styles from "../CityOverview/CityOverview.module.css";
 
 const cities = [
   {
@@ -11,6 +12,26 @@ const cities = [
     lat: 51.5074,
     lng: -0.1278,
     name: "London",
+  },
+  {
+    lat: 34.05,
+    lng: -118.24,
+    name: "Los Angeles",
+  },
+  {
+    lat: 35.28,
+    lng: 149.13,
+    name: "Canberra",
+  },
+  {
+    lat: 41.29,
+    lng: 174.78,
+    name: "Wellington",
+  },
+  {
+    lat: 35.41,
+    lng: 139.41,
+    name: "Tokio",
   },
 ];
 
@@ -32,12 +53,12 @@ function CityOverview() {
             `${BASE_URL}?latitude=${city.lat}&longitude=${city.lng}${BASE_OVERVIEW_URL}`,
           );
           const data = await res.json();
-          // console.log(data);
+          console.log(data);
 
           return data;
         });
         const data = await Promise.all(requests);
-        // console.log(data);
+        console.log(data);
 
         setWeatherData(data);
       } catch (err) {
@@ -52,7 +73,7 @@ function CityOverview() {
   if (isLoading) return <p>Loading...</p>;
 
   return (
-    <div>
+    <div className={styles.overview}>
       {cities.map((city, i) => (
         <CityOverviewCard
           name={city.name}

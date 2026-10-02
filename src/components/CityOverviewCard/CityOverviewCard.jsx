@@ -1,43 +1,10 @@
 import { useState } from "react";
+import { weatherImages } from "../../functions/weatherImages";
 import styles from "../CityOverviewCard/CityOverviewCard.module.css";
-
-const weatherImage = {
-  clear: [
-    "/img/weather/clear/clear1.webp",
-    "/img/weather/clear/clear2.webp",
-    "/img/weather/clear/clear3.webp",
-    "/img/weather/clear/clear4.webp",
-  ],
-  cloudy: [
-    "/img/weather/cloudy/1.webp",
-    "/img/weather/cloudy/2.webp",
-    "/img/weather/cloudy/3.webp",
-    "/img/weather/cloudy/4.webp",
-  ],
-  rainy: [
-    "/img/weather/rainy/rainy1.webp",
-    "/img/weather/rainy/rainy2.webp",
-    "/img/weather/rainy/rainy3.webp",
-    "/img/weather/rainy/rainy4.webp",
-  ],
-};
 
 function CityOverviewCard({ name, weatherData }) {
   const weatherCode = weatherData.current.weather_code;
-  // console.log(weatherCode);
-
-  let weatherCategory;
-
-  if (weatherCode === 0) {
-    weatherCategory = "clear";
-  } else if (weatherCode === 1 || weatherCode === 2 || weatherCode === 3) {
-    weatherCategory = "cloudy";
-  } else if (weatherCode === 51 || weatherCode === 61) {
-    weatherCategory = "rainy";
-  }
-  // console.log(weatherCategory);
-
-  const images = weatherImage[weatherCategory];
+  const { images, weatherCategory } = weatherImages(weatherCode);
 
   const [weatherCardBackground] = useState(() => {
     const randomIndex = Math.floor(Math.random() * images.length);
@@ -45,7 +12,14 @@ function CityOverviewCard({ name, weatherData }) {
     return images[randomIndex];
   });
 
-  // console.log(weatherCardBackground);
+  const option = {
+    timeZone: weatherData.timezone,
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  };
+
+  const localeTime = new Date().toLocaleTimeString("de-DE", option);
 
   return (
     <div
@@ -79,6 +53,7 @@ function CityOverviewCard({ name, weatherData }) {
           {weatherData.current.wind_speed_10m} kph
         </p>
       </div>
+      <p>{localeTime}</p>
     </div>
   );
 }

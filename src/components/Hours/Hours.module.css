@@ -28,3 +28,7 @@
   width: 1px;
   background: rgba(255, 255, 255, 0.3);
 }
+
+.date {
+  height: 0.8rem;
+}

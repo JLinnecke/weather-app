@@ -1,12 +1,20 @@
-.min_max_details {
+.minMaxDetails {
   color: white;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-.hours_temp_container {
+.weatherDetails {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 5.5);
+}
+
+.hoursTempContainer {
   display: flex;
   align-items: center;
   overflow-x: auto;
+
+  scrollbar-width: none;
 
   background: rgba(255, 255, 255, 0.17);
   border-radius: 16px;
@@ -17,4 +25,18 @@
 
   color: white;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+
+  cursor: pointer;
+
+  margin-bottom: 2rem;
+}
+
+.precipitationContainer {
+  display: flex;
+  align-items: center;
+}
+
+.precipitationTile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }

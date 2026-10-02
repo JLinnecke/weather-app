@@ -1,12 +1,12 @@
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
-import Weathercard from "../components/WeatherCard/Weathercard";
+import WeatherCard from "../components/WeatherCard/WeatherCard";
 
 function Detail({ searchResults }) {
   return (
     <div>
       <Header />
-      <Weathercard searchResults={searchResults} />
+      <WeatherCard searchResults={searchResults} />
       <Footer />
     </div>
   );

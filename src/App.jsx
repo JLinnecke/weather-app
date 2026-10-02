@@ -5,6 +5,7 @@ import Detail from "./pages/Detail";
 import Homepage from "./pages/homepage";
 
 import "./App.css";
+import PageNotFound from "./components/PageNotFound/PageNotFound";
 
 function App() {
   const [searchResults, setSearchResults] = useState([]);
@@ -22,7 +23,7 @@ function App() {
           }
         />
         <Route
-          path="/detail"
+          path="/:city/:lat/:lon"
           element={
             <Detail
               searchResults={searchResults}
@@ -30,6 +31,7 @@ function App() {
             />
           }
         />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   );

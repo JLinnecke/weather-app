@@ -7,6 +7,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 5.5);
+  column-gap: 2rem;
+  row-gap: 1rem;
 }
 
 .hoursTempContainer {
@@ -28,11 +30,27 @@
 
   cursor: pointer;
 
-  margin-bottom: 2rem;
+  margin: 2rem 0 2rem 0;
+}
+
+.detailTile {
+  background: rgba(255, 255, 255, 0.17);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+
+  padding: 1rem;
+  margin: 0.5rem 0rem 0.5rem 0rem;
 }
 
 .precipitationContainer {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 

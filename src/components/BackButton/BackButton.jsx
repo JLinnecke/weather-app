@@ -6,8 +6,8 @@ function BackButton() {
 
   return (
     <div>
-      <button onClick={() => navigate(-1)} className={styles.btn_back}>
-        &larr;
+      <button onClick={() => navigate("/")} className={styles.btn_back}>
+        <span>&larr;</span>
       </button>
     </div>
   );

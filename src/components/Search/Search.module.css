@@ -1,11 +1,16 @@
+.searchContainer form {
+  display: flex;
+  gap: 0.5rem;
+}
+
 .searchbar {
-  font-size: 2rem;
+  font-size: 1rem;
   border: none;
   border-radius: 1rem;
 }
 
 .searchBtn {
   border: none;
-  border-radius: 1rem;
-  font-size: 2.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
 }

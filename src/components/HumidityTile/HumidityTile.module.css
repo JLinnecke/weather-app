@@ -13,4 +13,13 @@
 
   color: white;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+
+  min-width: 20rem;
+
+  height: 8rem;
+  box-sizing: border-box;
+}
+
+.tileHeading {
+  font-size: 1.5rem;
 }

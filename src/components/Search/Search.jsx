@@ -8,7 +8,8 @@ function Search({ setSearchResults }) {
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
 
-  async function handleFetchCityData() {
+  async function handleFetchCityData(e) {
+    e.preventDefault();
     try {
       const res = await fetch(
         `${BASE_CITY_URL}?q=${encodeURIComponent(query)}&format=jsonv2`,
@@ -17,24 +18,29 @@ function Search({ setSearchResults }) {
       const data = await res.json();
       console.log(data);
 
+      const city = data[0];
+
       setSearchResults(data);
-      navigate("/detail");
+      navigate(`/${city.name}/${city.lat}/${city.lon}`);
+      setQuery("");
     } catch (err) {
       console.error(err);
     }
   }
 
   return (
-    <div>
-      <input
-        className={styles.searchbar}
-        placeholder="Search city..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-      />
-      <button className={styles.searchBtn} onClick={handleFetchCityData}>
-        🔎
-      </button>
+    <div className={styles.searchContainer}>
+      <form onSubmit={handleFetchCityData}>
+        <input
+          className={styles.searchbar}
+          placeholder="Search city..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        <button className={styles.searchBtn} type="submit">
+          🔎
+        </button>
+      </form>
     </div>
   );
 }

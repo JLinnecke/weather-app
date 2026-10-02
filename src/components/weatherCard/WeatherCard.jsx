@@ -124,27 +124,27 @@ function WeatherCard({ searchResults }) {
       <div className={styles.minMaxDetails}>
         <h1>{searchResults[0].name}</h1>
         <div className={styles.weatherDetails}>
-          <p>
+          <p className={styles.detailTile}>
             <span>Min: </span>
             {daily.temperature_2m_min[0]} °C
           </p>
 
-          <p>
+          <p className={styles.detailTile}>
             <span>Max: </span>
             {daily.temperature_2m_max[0]} °C
           </p>
 
-          <p>
+          <p className={styles.detailTile}>
             <span>Apparent temperature: </span>
             {hourly.apparent_temperature[startIndex]} °C
           </p>
-          <p>
+          <p className={styles.detailTile}>
             <span>Wind speed: </span>
             {hourly.wind_speed_10m[startIndex]}
           </p>
         </div>
       </div>
-      <h2>Temperature</h2>
+
       <div
         className={styles.hoursTempContainer}
         ref={scrollRef}

@@ -1,14 +1,15 @@
 .logo {
-  width: 15rem;
+  width: 5rem;
   height: auto;
 }
 
 .header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 8px;
   width: 100%;
   max-width: 1400px;
+  box-sizing: border-box;
   margin: auto 0;
 }

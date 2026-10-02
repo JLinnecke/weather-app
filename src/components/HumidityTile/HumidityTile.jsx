@@ -3,10 +3,10 @@ import styles from "./HumidityTile.module.css";
 function HumidityTile({ humidity }) {
   return (
     <div className={styles.HumidityTile}>
-      <h1>Luftfeuchtigkeit</h1>
+      <h3 className={styles.tileHeading}>Humidity</h3>
       <div>
         <p>
-          <span>Realtive Luftfeuchtigkeit: </span>
+          <span>Realtive humidity: </span>
           {humidity} %
         </p>
       </div>

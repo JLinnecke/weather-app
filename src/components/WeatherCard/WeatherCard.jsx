@@ -32,7 +32,6 @@ function WeatherCard({ searchResults }) {
     isDragging.current = true;
     startX.current = e.clientX;
     scrollStart.current = scrollRef.current.scrollLeft;
-    console.log(e.clientX);
   }
 
   function handleMouseMove(e) {
@@ -60,7 +59,6 @@ function WeatherCard({ searchResults }) {
           );
 
           const data = await res.json();
-          console.log(data, "data");
 
           setWeatherData(data);
         } catch (err) {
@@ -164,7 +162,7 @@ function WeatherCard({ searchResults }) {
         ))}
       </div>
       <div className={styles.precipitationContainer}>
-        <div className={styles.precipitationTile}>
+        <div>
           <PercipitationTile
             precipitationProbaility={
               hourly.precipitation_probability[startIndex]

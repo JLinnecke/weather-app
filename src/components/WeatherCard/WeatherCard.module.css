@@ -54,14 +54,13 @@
   align-items: center;
 }
 
-.precipitationTile {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-@media (max-width: 500px) {
+@media (max-width: 680px) {
   .precipitationContainer {
     flex-direction: column;
     gap: 20px;
+  }
+
+  .precipitationContainer > * {
+    width: 100%;
   }
 }

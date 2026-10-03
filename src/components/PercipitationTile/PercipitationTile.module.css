@@ -29,3 +29,9 @@
 .tileHeading {
   font-size: 1.5rem;
 }
+
+@media (max-width: 680px) {
+  .PercipitationTile {
+    min-width: 0;
+  }
+}

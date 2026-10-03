@@ -16,7 +16,6 @@ function Search({ setSearchResults }) {
       );
 
       const data = await res.json();
-      console.log(data);
 
       const city = data[0];
 

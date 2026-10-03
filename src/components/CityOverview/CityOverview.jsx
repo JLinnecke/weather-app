@@ -21,12 +21,10 @@ function CityOverview() {
             `${BASE_URL}?latitude=${city.lat}&longitude=${city.lng}${BASE_OVERVIEW_URL}`,
           );
           const data = await res.json();
-          // console.log(data);
 
           return data;
         });
         const data = await Promise.all(requests);
-        // console.log(data);
 
         setWeatherData(data);
       } catch (err) {

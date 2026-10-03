@@ -13,3 +13,9 @@
   box-sizing: border-box;
   margin: auto 0;
 }
+
+@media (max-width: 500px) {
+  .logo {
+    width: 3.5rem;
+  }
+}

@@ -135,12 +135,12 @@ function WeatherCard({ searchResults }) {
           </p>
 
           <p className={styles.detailTile}>
-            <span>Apparent temperature: </span>
+            <span>Feels like: </span>
             {hourly.apparent_temperature[startIndex]} °C
           </p>
           <p className={styles.detailTile}>
-            <span>Wind speed: </span>
-            {hourly.wind_speed_10m[startIndex]}
+            <span>Wind: </span>
+            {hourly.wind_speed_10m[startIndex]} kph
           </p>
         </div>
       </div>

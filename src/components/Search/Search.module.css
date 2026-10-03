@@ -14,3 +14,14 @@
   border-radius: 0.5rem;
   font-size: 1rem;
 }
+
+@media (max-width: 500px) {
+  .searchbar {
+    width: 7rem;
+    font-size: 0.8rem;
+  }
+
+  .searchBtn {
+    font-size: 0.8rem;
+  }
+}

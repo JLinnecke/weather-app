@@ -45,5 +45,3 @@ function Search({ setSearchResults }) {
 }
 
 export default Search;
-
-//  https://nominatim.openstreetmap.org/search?<params>

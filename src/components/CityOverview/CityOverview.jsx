@@ -52,8 +52,3 @@ function CityOverview() {
 }
 
 export default CityOverview;
-
-// OVERVIEW API:
-// https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&daily=temperature_2m_min,temperature_2m_max&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,wind_speed_10m,weather_code
-
-// ?latitude=52.52&longitude=13.41

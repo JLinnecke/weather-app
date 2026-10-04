@@ -3,9 +3,11 @@ import { useState } from "react";
 
 import Detail from "./pages/Detail";
 import Homepage from "./pages/Homepage";
+import LegalNotice from "./pages/LegalNotice";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import PageNotFound from "./components/PageNotFound/PageNotFound";
 
 import "./App.css";
-import PageNotFound from "./components/PageNotFound/PageNotFound";
 
 function App() {
   const [searchResults, setSearchResults] = useState([]);
@@ -31,6 +33,8 @@ function App() {
             />
           }
         />
+        <Route path="/legal-notice" element={<LegalNotice />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
